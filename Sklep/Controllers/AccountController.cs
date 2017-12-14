@@ -75,5 +75,11 @@ namespace Sklep.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
+        }
     }
 }
