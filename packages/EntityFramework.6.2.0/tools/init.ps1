@@ -5,7 +5,7 @@ if (Get-Module | ?{ $_.Name -eq 'EntityFramework' })
     Remove-Module EntityFramework
 }
 
-Import-Module (Join-Path $toolsPath EntityFramework.psd1)
+Import-Module '.\packages\EntityFramework.6.2.0\tools\EntityFramework.psd1'
 
 # SIG # Begin signature block
 # MIIa3gYJKoZIhvcNAQcCoIIazzCCGssCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB

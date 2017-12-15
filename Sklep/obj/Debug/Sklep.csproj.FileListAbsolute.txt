@@ -28,3 +28,5 @@ D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Newtonsoft.Js
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.csprojResolveAssemblyReference.cache
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.dll
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.pdb
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.Migrations.InitialCreate.resources
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.csproj.GenerateResource.Cache
