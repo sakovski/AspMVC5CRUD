@@ -129,8 +129,11 @@
       <DependentUpon>201712132248190_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DbModels\RoleType.cs" />
     <Compile Include="Models\MyDbContext.cs" />
-    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Models\DbModels\Role.cs" />
+    <Compile Include="Models\DbModels\UserAccount.cs" />
+    <Compile Include="Models\ViewModels\ViewUserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Sklep.Models;
+using Sklep.Models.DbModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Sklep.Controllers
         {
             using(MyDbContext context = new MyDbContext())
             {
-                return View(context.userAccount.ToList());
+                return View(context.UserAccounts.ToList());
             }
         }
 
@@ -24,17 +25,28 @@ namespace Sklep.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(UserAccount account)
+        public ActionResult Register(ViewUserAccount viewAccount)
         {
             if(ModelState.IsValid)
             {
+                UserAccount newAccount = new UserAccount(viewAccount.FirstName, viewAccount.LastName, viewAccount.Email, viewAccount.Username, viewAccount.Password);
                 using(MyDbContext context = new MyDbContext())
                 {
-                    context.userAccount.Add(account);
+                    var idRole = 0;
+                    if(viewAccount.Username.Equals("admin"))
+                    {                        
+                        idRole = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).FirstOrDefault();
+                    }
+                    else
+                    {
+                        idRole = (from role in context.Roles where role.RoleName == RoleType.User select role.RoleID).FirstOrDefault();
+                    }
+                    newAccount.RoleId = idRole;
+                    context.UserAccounts.Add(newAccount);
                     context.SaveChanges();
                 }
                 ModelState.Clear();
-                ViewBag.Message = "Welcome " + account.FirstName + " " + account.LastName + "! You're succesfully registered!";
+                ViewBag.Message = "Welcome " + viewAccount.FirstName + " " + viewAccount.LastName + "! You're succesfully registered!";
             }
             return View();
         }
@@ -45,14 +57,14 @@ namespace Sklep.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(UserAccount account)
+        public ActionResult Login(ViewUserAccount account)
         {
             using (MyDbContext context = new MyDbContext())
             {
-                var user = context.userAccount.Single(u => u.Username == account.Username && u.Password == account.Password);
+                var user = context.UserAccounts.Single(u => u.Username == account.Username && u.Password == account.Password);
                 if(user != null)
                 {
-                    Session["UserID"] = user.userID.ToString();
+                    Session["UserID"] = user.UserID.ToString();
                     Session["UserName"] = user.Username.ToString();
                     return RedirectToAction("LoggedIn");
                 }

@@ -6,11 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sklep.Models
 {
-    public class UserAccount
+    public class ViewUserAccount
     {
-        [Key]
-        public int userID { get; set; }
-
         [Required(ErrorMessage="First name is required!")]
         public string FirstName { get; set; }
 
@@ -30,6 +27,6 @@ namespace Sklep.Models
 
         [Compare("Password", ErrorMessage="you need to confirm your password!")]
         [DataType(DataType.Password)]
-        public string ConfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }     
     }
 }
