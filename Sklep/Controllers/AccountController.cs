@@ -29,18 +29,10 @@ namespace Sklep.Controllers
         {
             if(ModelState.IsValid)
             {
-                UserAccount newAccount = new UserAccount(viewAccount.FirstName, viewAccount.LastName, viewAccount.Email, viewAccount.Username, viewAccount.Password);
+                UserAccount newAccount = new UserAccount() { FirstName = viewAccount.FirstName, LastName = viewAccount.LastName, Email = viewAccount.Email, Username = viewAccount.Username, Password = viewAccount.Password};
                 using(MyDbContext context = new MyDbContext())
                 {
-                    var idRole = 0;
-                    if(viewAccount.Username.Equals("admin"))
-                    {                        
-                        idRole = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).FirstOrDefault();
-                    }
-                    else
-                    {
-                        idRole = (from role in context.Roles where role.RoleName == RoleType.User select role.RoleID).FirstOrDefault();
-                    }
+                    var idRole = (from role in context.Roles where role.RoleName == RoleType.User select role.RoleID).FirstOrDefault();
                     newAccount.RoleId = idRole;
                     context.UserAccounts.Add(newAccount);
                     context.SaveChanges();
@@ -91,7 +83,7 @@ namespace Sklep.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
     }
 }

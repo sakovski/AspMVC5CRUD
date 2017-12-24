@@ -21,7 +21,9 @@ namespace Sklep.Migrations
                     new Role() { RoleName = RoleType.Admin },
                     new Role() { RoleName = RoleType.Producer },
                     new Role() { RoleName = RoleType.User });
-            context.UserAccounts.AddOrUpdate( x =.)
+            context.UserAccounts.AddOrUpdate( user => user.UserID, 
+               new UserAccount {FirstName = "admin", LastName = "admin", Email = "admin@movie.com", Password = "admin", Username = "admin", 
+                                RoleId = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).First()});
         }
     }
 }
