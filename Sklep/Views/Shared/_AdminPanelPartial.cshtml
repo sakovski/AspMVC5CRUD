@@ -1,7 +1,13 @@
 ﻿@if (Session["UserID"] != null && Session["UserRole"].Equals(Sklep.Models.DbModels.RoleType.Admin.ToString()))
 {
-    using (Html.BeginForm("Admin Panel", "Account", FormMethod.Post, new { id = "adminForm", @class = "navbar-right" }))
-    {
-
-    }
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Admin panel
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Storage", "Add", "Storage")</li>
+            <li>@Html.ActionLink("Storage", "View", "Storage")</li>
+        </ul>
+    </li>
 }
