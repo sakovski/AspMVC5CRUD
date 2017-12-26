@@ -12,8 +12,10 @@ namespace Sklep.Models.DbModels
         [Key]
         public int UserID { get; set; }
 
+        [StringLength(40, MinimumLength = 2)]
         public string FirstName { get; set; }
 
+        [StringLength(40, MinimumLength = 2)]
         public string LastName { get; set; }
        
         [Required]

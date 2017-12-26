@@ -11,5 +11,7 @@ namespace Sklep.Models
     {
         public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Director> Directors { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }

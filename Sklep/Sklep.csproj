@@ -129,6 +129,9 @@
       <DependentUpon>201712132248190_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DbModels\Director.cs" />
+    <Compile Include="Models\DbModels\Movie.cs" />
+    <Compile Include="Models\DbModels\MovieGenreType.cs" />
     <Compile Include="Models\DbModels\RoleType.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\DbModels\Role.cs" />
