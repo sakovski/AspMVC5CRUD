@@ -27,7 +27,7 @@ namespace Sklep.Models.DbModels
         [Required]
         public string Password { get; set; }
 
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
 
         [ForeignKey("Role")]
         public int RoleId { get; set; }

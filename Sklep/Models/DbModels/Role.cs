@@ -17,6 +17,6 @@ namespace Sklep.Models.DbModels
 
         public RoleType RoleName { get; set; }
 
-        public IEnumerable<UserAccount> Users { get; set; }
+        public ICollection<UserAccount> Users { get; set; }
     }
 }

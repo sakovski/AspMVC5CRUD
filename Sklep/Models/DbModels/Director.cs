@@ -30,6 +30,6 @@ namespace Sklep.Models.DbModels
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
-        public IEnumerable<Movie> Movies { get; set; }
+        public ICollection<Movie> Movies { get; set; }
     }
 }
