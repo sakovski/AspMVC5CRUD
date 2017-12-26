@@ -17,13 +17,13 @@ namespace Sklep.Migrations
 
         protected override void Seed(Sklep.Models.MyDbContext context)
         {
-            context.Roles.AddOrUpdate( role => role.RoleID,
+            /*context.Roles.AddOrUpdate( role => role.RoleID,
                     new Role() { RoleName = RoleType.Admin },
                     new Role() { RoleName = RoleType.Producer },
                     new Role() { RoleName = RoleType.User });
             context.UserAccounts.AddOrUpdate( user => user.UserID, 
                new UserAccount {FirstName = "admin", LastName = "admin", Email = "admin@movie.com", Password = "admin", Username = "admin", 
-                                RoleId = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).First()});
+                                RoleId = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).First()}); */
         }
     }
 }

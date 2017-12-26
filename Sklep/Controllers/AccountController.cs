@@ -58,6 +58,7 @@ namespace Sklep.Controllers
                 {
                     Session["UserID"] = user.UserID.ToString();
                     Session["UserName"] = user.Username.ToString();
+                    Session["UserRole"] = user.Role.RoleName.ToString();
                     return RedirectToAction("LoggedIn");
                 }
                 else
