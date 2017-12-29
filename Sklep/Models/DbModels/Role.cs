@@ -12,9 +12,11 @@ namespace Sklep.Models.DbModels
         {
             this.Users = new HashSet<UserAccount>();
         }
+
         [Key]
         public int RoleID { get; set; }
 
+        [Display(Name = "Role")]
         public RoleType RoleName { get; set; }
 
         public ICollection<UserAccount> Users { get; set; }

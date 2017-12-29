@@ -40,7 +40,7 @@ namespace Sklep.Controllers
         // GET: UserAccounts/Create
         public ActionResult Create()
         {
-            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleID");
+            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleName");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace Sklep.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleID", userAccount.RoleId);
+            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleName", userAccount.RoleId);
             return View(userAccount);
         }
 
@@ -74,7 +74,7 @@ namespace Sklep.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleID", userAccount.RoleId);
+            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleName", userAccount.RoleId);
             return View(userAccount);
         }
 
@@ -91,7 +91,7 @@ namespace Sklep.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleID", userAccount.RoleId);
+            ViewBag.RoleId = new SelectList(db.Roles, "RoleID", "RoleName", userAccount.RoleId);
             return View(userAccount);
         }
 

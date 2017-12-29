@@ -12,19 +12,27 @@ namespace Sklep.Models.DbModels
         [Key]
         public int UserID { get; set; }
 
-        [StringLength(40, MinimumLength = 2)]
+        [Required(ErrorMessage = "First Name is required!")]
+        [StringLength(40, MinimumLength = 2, ErrorMessage = "First Name must have 2-40 letters!")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [StringLength(40, MinimumLength = 2)]
+        [Required(ErrorMessage = "Last Name is required!")]
+        [StringLength(40, MinimumLength = 2, ErrorMessage = "Last Name must have 2-40 letters!")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
        
-        [Required]
+        [Required(ErrorMessage = "Email is required!")]
+        [EmailAddress(ErrorMessage = "Enter valid email address!")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Username is required!")]
+        [StringLength(70, MinimumLength = 5, ErrorMessage = "Last Name must have 5-70 letters!")]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password is required!")]
+        [DataType(DataType.Password)]
+        [StringLength(70, MinimumLength = 5, ErrorMessage = "Password must have 5-70 letters!")]
         public string Password { get; set; }
 
         public virtual Role Role { get; set; }
