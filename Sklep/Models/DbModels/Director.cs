@@ -16,18 +16,20 @@ namespace Sklep.Models.DbModels
         [Key]
         public int DirectorID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "First Name is required!")]
         [StringLength(40, MinimumLength = 2)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Last Name is required!")]
         [StringLength(40, MinimumLength = 2)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        [StringLength(40, MinimumLength = 3)]
         public string Nationality { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "Enter valid date (YYYY-MM-DD)")]
+        [Display(Name = "Date of birth (YYYY-MM-DD)")]
         public DateTime DateOfBirth { get; set; }
 
         public ICollection<Movie> Movies { get; set; }

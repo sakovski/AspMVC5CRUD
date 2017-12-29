@@ -1,4 +1,4 @@
-﻿@if (Session["UserID"] != null && (Session["UserRole"].Equals(Sklep.Models.DbModels.RoleType.Producer.ToString()) || Session["UserRole"].Equals(Sklep.Models.DbModels.RoleType.Admin.ToString())))
+﻿@if (true)
 {
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -6,8 +6,9 @@
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
-            <li>@Html.ActionLink("Storage", "Add", "Storage")</li>
-            <li>@Html.ActionLink("Storage", "View", "Storage")</li>
+            <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+            <li>@Html.ActionLink("Directors", "Index", "Directors")</li>
         </ul>
     </li>
 }
+@*@if (Session["UserID"] != null && (Session["UserRole"].Equals(Sklep.Models.DbModels.RoleType.Producer.ToString()) || Session["UserRole"].Equals(Sklep.Models.DbModels.RoleType.Admin.ToString()))) *@

@@ -27,24 +27,35 @@ namespace Sklep.Migrations
             if (!context.UserAccounts.Any())
             {
                 context.UserAccounts.AddOrUpdate(user => user.UserID,
-               new UserAccount
-               {
-                   FirstName = "admin",
-                   LastName = "admin",
-                   Email = "admin@movie.com",
-                   Password = "admin",
-                   Username = "admin",
-                   RoleId = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).First()
-               },
-               new UserAccount
-               {
-                   FirstName = "producer",
-                   LastName = "producer",
-                   Email = "producer@gmail.com",
-                   Password = "producer",
-                   Username = "producer",
-                   RoleId = (from role in context.Roles where role.RoleName == RoleType.Producer select role.RoleID).First()
-               }); 
+                    new UserAccount
+                    {
+                        FirstName = "admin",
+                        LastName = "admin",
+                        Email = "admin@movie.com",
+                        Password = "admin",
+                        Username = "admin",
+                        RoleId = (from role in context.Roles where role.RoleName == RoleType.Admin select role.RoleID).First()
+                    },
+                    new UserAccount
+                    {
+                        FirstName = "producer",
+                        LastName = "producer",
+                        Email = "producer@gmail.com",
+                        Password = "producer",
+                        Username = "producer",
+                        RoleId = (from role in context.Roles where role.RoleName == RoleType.Producer select role.RoleID).First()
+                    }); 
+            }
+            if(!context.Directors.Any())
+            {
+                context.Directors.AddOrUpdate(director => director.DirectorID,
+                    new Director
+                    {
+                        FirstName = "Quentin",
+                        LastName = "Tarantino",
+                        Nationality = "United States",
+                        DateOfBirth = new DateTime(1963,3,26)
+                    });
             }
         }
     }
