@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Sklep.Models
 {
@@ -20,10 +21,12 @@ namespace Sklep.Models
 
         [Required(ErrorMessage = "Email is required!")]
         [EmailAddress(ErrorMessage = "Enter valid email address!")]
+        [Remote("IsEmailExist", "Validation", ErrorMessage = "Email already exists")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Username is required!")]
         [StringLength(70, MinimumLength = 5, ErrorMessage = "Username must have 5-70 letters!")]
+        [Remote("IsUsernameExist", "Validation", ErrorMessage = "Username already exists")]  
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Password is required!")]
@@ -31,7 +34,7 @@ namespace Sklep.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Compare("Password", ErrorMessage="You need to confirm your password!")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "You need to confirm your password!")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; }     

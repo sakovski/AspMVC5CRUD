@@ -21,6 +21,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @Html.Partial("_MoviesPartial")
+                    <li>@Html.ActionLink("Directors", "method", "controller")</li>
                     @Html.Partial("_AdminPanelPartial")
                     @Html.Partial("_ProducerPanelPartial")
                 </ul>
