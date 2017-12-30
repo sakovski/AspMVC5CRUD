@@ -1,0 +1,82 @@
+﻿@model Sklep.Models.DbModels.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre.GenreID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre.GenreID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minutes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minutes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

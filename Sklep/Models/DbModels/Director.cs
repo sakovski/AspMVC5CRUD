@@ -17,15 +17,16 @@ namespace Sklep.Models.DbModels
         public int DirectorID { get; set; }
 
         [Required(ErrorMessage = "First Name is required!")]
-        [StringLength(40, MinimumLength = 2)]
+        [StringLength(40, MinimumLength = 2, ErrorMessage = "First Name must have 2-40 letters!")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last Name is required!")]
-        [StringLength(40, MinimumLength = 2)]
+        [StringLength(40, MinimumLength = 2, ErrorMessage = "Last Name must have 2-40 letters!")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Nationality must have 2-100 letters!")]
         public string Nationality { get; set; }
 
         [DataType(DataType.Date, ErrorMessage = "Enter valid date (YYYY-MM-DD)")]
