@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Sklep.Models.DbModels.Director>
+
+@{
+    ViewBag.Title = "DirectorsList";
+}
+
+<h2>Directors List</h2>
+
+<table class="table">
+    <tr>
+        <th>Full Name</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.ActionLink(item.LastName + " " + item.FirstName, "DirectorDetails", new { id = item.DirectorID })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+    </tr>
+}
+
+</table>

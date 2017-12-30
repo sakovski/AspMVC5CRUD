@@ -34,7 +34,7 @@ namespace Sklep.Controllers
             {
                 return HttpNotFound();
             }
-            return View(movie);
+            return View("MovieDetails", movie);
         }
 
         // GET: Movies/Create

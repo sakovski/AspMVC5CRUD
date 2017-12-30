@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Sklep.Models.DbModels.MovieGenre>
+
+@{
+    ViewBag.Title = "GenresList";
+}
+
+<h2>Genres</h2>
+
+<table class="table">
+    <tr>
+        <th>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.GenreName.ToString(), "GenreDetails", new { id = item.GenreID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @Html.Partial("_MoviesPartial")
-                    <li>@Html.ActionLink("Directors", "method", "controller")</li>
+                    <li>@Html.ActionLink("Directors", "DirectorsList", "User")</li>
                     @Html.Partial("_AdminPanelPartial")
                     @Html.Partial("_ProducerPanelPartial")
                 </ul>
@@ -34,7 +34,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Seweryn Rutkowski</p>
+            <p>&copy; @DateTime.Now.Year - MoviesLib</p>
         </footer>
     </div>
 

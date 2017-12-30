@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Sklep.Models.DbModels.Movie>
+
+@{
+    ViewBag.Title = "MoviesList";
+}
+
+<h2>Movies Library</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre.GenreName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Title, "MovieDetails", new { id = item.MovieID })
+        </td>
+        <td>
+            @Html.ActionLink(item.Genre.GenreName.ToString(), "GenreDetails", new { id = item.GenreId })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+    </tr>
+}
+
+</table>

@@ -28,13 +28,12 @@ namespace Sklep.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Director director = db.Directors.Find(id);
             Director director = db.Directors.Include(m => m.Movies).First(i => i.DirectorID == id);
             if (director == null)
             {
                 return HttpNotFound();
             }
-            return View(director);
+            return View("DirectorDetails", director);
         }
 
         // GET: Directors/Create
