@@ -28,7 +28,8 @@ namespace Sklep.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Director director = db.Directors.Find(id);
+            //Director director = db.Directors.Find(id);
+            Director director = db.Directors.Include(m => m.Movies).First(i => i.DirectorID == id);
             if (director == null)
             {
                 return HttpNotFound();
@@ -114,6 +115,11 @@ namespace Sklep.Controllers
             db.Directors.Remove(director);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult MovieDetails(int? id)
+        {
+            return RedirectToAction("Details", "Movies", new { id = id });
         }
 
         protected override void Dispose(bool disposing)

@@ -130,6 +130,11 @@ namespace Sklep.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DirectorDetails(int? id)
+        {
+            return RedirectToAction("Details", "Directors", new { id = id });
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

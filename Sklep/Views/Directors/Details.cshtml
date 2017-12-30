@@ -4,28 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
 
-<div>
-    <h4>Director</h4>
+<div>   
     <hr />
+    <h4>Biography:</h4>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Nationality)
         </dt>
@@ -41,10 +25,45 @@
         <dd>
             @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
-
     </dl>
+
+    <h4>Movies:</h4>
+    
+        @if(Model.Movies.Any())
+        {
+            <table class="table">              
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Movies.FirstOrDefault().Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Movies.FirstOrDefault().Year)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Movies.FirstOrDefault().Genre.GenreName)
+                    </th>
+                </tr>
+               
+                @foreach (var item in Model.Movies)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(item.Title, "MovieDetails", new { id = item.MovieID })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genre.GenreName)
+                        </td>
+                    </tr>
+                }
+                
+            </table>
+        }
+        else
+        {
+            <h5>This director has no movies</h5>
+        }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DirectorID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
