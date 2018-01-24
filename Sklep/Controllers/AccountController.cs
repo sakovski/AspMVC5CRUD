@@ -53,7 +53,7 @@ namespace Sklep.Controllers
         {
             using (MyDbContext context = new MyDbContext())
             {
-                var user = context.UserAccounts.Single(u => u.Username == account.Username && u.Password == account.Password);
+                var user = context.UserAccounts.FirstOrDefault(u => u.Username == account.Username && u.Password == account.Password);
                 if(user != null)
                 {
                     Session["UserID"] = user.UserID.ToString();

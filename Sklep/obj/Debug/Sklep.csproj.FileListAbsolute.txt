@@ -30,3 +30,16 @@ D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.d
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.pdb
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.Migrations.InitialCreate.resources
 D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\obj\Debug\Sklep.csproj.GenerateResource.Cache
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Owin.dll
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.xml
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.xml
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Programowanie\[SEM5] Technologie.NET\Zaliczenie\Sklep\Sklep\bin\Microsoft.Owin.Security.OAuth.xml

@@ -8,9 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using Sklep.Models;
 using Sklep.Models.DbModels;
+using Sklep.Models.Attributes;
 
 namespace Sklep.Controllers
 {
+    [AuthorizeAdmin]
     public class UserAccountsController : Controller
     {
         private MyDbContext db = new MyDbContext();
